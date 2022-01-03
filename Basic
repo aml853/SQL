@@ -22,6 +22,8 @@ SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY 
 SELECT * FROM Country;
 SELECT Name, Continent, Region FROM Country;
 SELECT Name AS Country, Continent, Region FROM Country;
+#CAN SPECIFY A SINGLE COLUMN
+SELECT COUNT (LifeExpectancy) FROM Country;
 
 #COUNTING ROWS
 
@@ -32,3 +34,25 @@ SELECT COUNT (*) FROM Country WHERE Population > 1000000;
 SELECT COUNT (*) FROM Country WHERE Population > 100000000;
 #ADDING AND CLAUSE FOR GREATER SPECIFICS
 SELECT COUNT (*) FROM Country WHERE Population > 100000000 AND Continent = 'Europe';
+#CAN SPECIFY A SINGLE COLUMN. OMITTS "NULL" DATA
+SELECT COUNT (LifeExpectancy) FROM Country;
+
+#INSERTING DATA
+#CAREFUL THIS CAN DUPLICATE INFORMATION
+
+SELECT * FROM customer;
+
+INSERT INTO customer (name, address, city, state, zip)
+    VALUES('Fred Flintstone', '123 Cobblestone Way', 'Bedrock', 'CA', '91234');
+#CAN POPULATE SOME INFORMATION
+INSERT INTO customer (name, city, state)
+    VALUES('Jimi Hendrix', 'Renton', 'WA');
+    
+#UPDATING DATA
+#WITHOUT THE WHERE CLAUSE CHANGES WILL APPLY TO WHOLE TABLE
+
+SELECT * FROM customer;
+
+UPDATE customer SET address = '123 Music Avenue', zip = '96056', WHERE id = 5;
+#THIS CAN UNSET THE DATA
+UPDATE customer SET address = NULL, zip = NULL WHERE id = 5;
