@@ -1,0 +1,8 @@
+#THE SELECT STATEMENT
+
+#THE * SYMBOL PULLS ALL ROWS AND COLUMNS
+SELECT * FROM Country;
+SELECT * FROM Country ORDER BY Name;
+SELECT Name, LifeExpectancy FROM Country ORDER BY Name;
+#CHANGE THE NAME OF THE COLUMN
+SELECT Name, LifeExpectancy AS "Life Expectancy" FROM Country ORDER BY Name;
