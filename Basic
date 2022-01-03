@@ -6,3 +6,29 @@ SELECT * FROM Country ORDER BY Name;
 SELECT Name, LifeExpectancy FROM Country ORDER BY Name;
 #CHANGE THE NAME OF THE COLUMN
 SELECT Name, LifeExpectancy AS "Life Expectancy" FROM Country ORDER BY Name;
+
+#SELECTING ROWS
+
+SELECT Name, Continent, Region FROM Country;
+#ADDING THE WHERE CLAUSE
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe';
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name;
+#LIMITING THE NUMBER OF ROWS. MUST BE IN THIS ORDER
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name LIMIT 5;
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name LIMIT 5 OFFSET 5;
+
+#SELECTING COLUMNS
+
+SELECT * FROM Country;
+SELECT Name, Continent, Region FROM Country;
+SELECT Name AS Country, Continent, Region FROM Country;
+
+#COUNTING ROWS
+
+#ALL ROWS IN COUNTRY TABLE
+SELECT COUNT (*) FROM Country;
+#ADDING WHERE CLAUSE
+SELECT COUNT (*) FROM Country WHERE Population > 1000000;
+SELECT COUNT (*) FROM Country WHERE Population > 100000000;
+#ADDING AND CLAUSE FOR GREATER SPECIFICS
+SELECT COUNT (*) FROM Country WHERE Population > 100000000 AND Continent = 'Europe';
